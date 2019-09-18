@@ -1,11 +1,19 @@
-<div class="nav-bar-container">
-  <div class="container">
-    <div class="col-6">Rule of Thumb</div>
-    <div class="col-6">
-      Past trials <br>
-      How it works <br>
-      Log In / Sign Up <br>
-    </div>
+<nav class="nav-bar">
+  <div class="logo-space">
+    <a [routerLink]="'Home'" class="logo">
+      Rule of Thumb.
+    </a>
   </div>
-</div>
-
+  <div class="buttons-space">
+    <ul class="btn-list">
+      <ng-container *ngFor="let button of buttons">
+        <li>
+          <a [routerLink]="button.route">{{ button.label }}</a>
+        </li>
+      </ng-container>
+      <li class="search text-right">
+        <i class="fas fa-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>

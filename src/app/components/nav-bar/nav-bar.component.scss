@@ -1,0 +1,55 @@
+nav.nav-bar{
+
+  height: 100px;
+  max-height: 100px;
+  display: flex;
+
+  .logo-space{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    a.logo{
+      font-size: 2rem;
+      color: white;
+  
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  .buttons-space{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    ul.btn-list{
+      
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li{
+        display: inline-block;
+        width: 120px;
+        font-size: 16px;
+        font-weight: 200;
+        color: white;
+
+        &.search{
+          width: 60px;
+          font-size: 25px;
+        }
+
+        a{
+          display: block;
+          color: white;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

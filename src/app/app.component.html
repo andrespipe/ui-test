@@ -1,7 +1,10 @@
-<div class="page-container">
-  <test-nav-bar></test-nav-bar>
-  <test-header></test-header>
-  <div class="container">
-    <router-outlet></router-outlet>
+<div class="layout">
+  <div class="container-fluid">
+    <test-nav-bar></test-nav-bar>
+    <test-header></test-header>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <test-footer></test-footer>
   </div>
 </div>

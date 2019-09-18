@@ -1,0 +1,21 @@
+<footer>
+  <div class="buttons-space">
+    <ul>
+      <ng-container *ngFor="let link of links">
+        <li><a [routerLink]="link.route">{{ link.label }}</a></li>
+      </ng-container>
+    </ul>
+  </div>
+  <div class="networks-space">
+    <ul>
+      <li>Follow Us</li>
+      <ng-container *ngFor="let network of networks">
+        <li>
+          <a href="{{network.route}}" target="blank">
+            <i class="{{ network.label }}"></i>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</footer>

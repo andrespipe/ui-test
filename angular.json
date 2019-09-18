@@ -27,8 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/stylesVariables.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },
