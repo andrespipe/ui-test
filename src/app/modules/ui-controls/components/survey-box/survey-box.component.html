@@ -29,6 +29,7 @@
   <div class="results-body" [style.background-image]="formatImageUrl(model.imageUrl)">
     <div class="results-body-wrapper">
       <div class="results-body-content">
+        <test-dis-like-square [isLike]="model?.voteInfo?.isFavorable"></test-dis-like-square>
         <h2>{{ model?.title }}</h2>
         <p class="text-description">{{ model?.text }}</p>
         <div class="full-report-space">

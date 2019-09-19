@@ -14,7 +14,7 @@ import { UiControlsModule } from './modules/ui-controls/ui-controls.module';
     AppComponent,
     NavBarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,22 @@ html, body {
   background-color: unset !important;
   border-color: white;
   border-radius: 0;
+
+  &:hover{
+    border-color: grey;
+  }
+}
+
+.btn.btn-secondary{
+  background-color: unset !important;
+  border-color: black;
+  border-radius: 0;
+  color: black;
+
+  &:hover{
+    border-color: grey;
+    color: grey;
+  }
 }
 
 .in-page-title{

@@ -1,0 +1,16 @@
+@import 'stylesVariables';
+
+.square {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+}
+
+.square.square-like{
+  background-color: $color-agree;
+}
+
+.square.square-dislike{
+  background-color: $color-disagree;
+}

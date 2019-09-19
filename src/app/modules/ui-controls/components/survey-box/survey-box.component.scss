@@ -4,6 +4,7 @@
   margin-bottom: 40px;
 
   .glass-body{
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     background-color: rgba($color: #000000, $alpha: .3);
     color: white;
@@ -17,6 +18,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    test-dis-like-square{
+      float: left;
+      margin-left: -30px;
+      margin-top: 5px;
+    }
+
     .results-body-wrapper{
       display: flex;
       align-items: flex-end;

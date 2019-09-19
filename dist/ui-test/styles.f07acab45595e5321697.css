@@ -1,4 +1,4 @@
-body,html{margin:0;padding:0;font-family:Lato,sans-serif}.btn.btn-primary{background-color:unset!important;border-color:#fff;border-radius:0}.in-page-title{font-size:35px;font-weight:200}/*!
+body,html{margin:0;padding:0;font-family:Lato,sans-serif}.btn.btn-primary{background-color:unset!important;border-color:#fff;border-radius:0}.btn.btn-primary:hover{border-color:grey}.btn.btn-secondary{background-color:unset!important;border-color:#000;border-radius:0;color:#000}.btn.btn-secondary:hover{border-color:grey;color:grey}.in-page-title{font-size:35px;font-weight:200}/*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
