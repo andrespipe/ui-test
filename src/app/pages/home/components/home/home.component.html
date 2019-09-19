@@ -1,3 +1,34 @@
-<p>
-  home works!
-</p>
+<div class="home-page-container">
+  <div class="row header-info">
+    <div class="col-xs-12 col-md-6">
+      <test-survey-box [model]="pageInfo.header"></test-survey-box>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="grey-box">
+    <div class="text-content">
+      <div class="title">
+        <div>
+          Speak out. Be Heard.
+          <h2>Be Counted</h2>
+        </div>
+      </div>
+      <div class="text">
+          Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely.
+          It’s easy: You share your opinion, we analyze and put the data in a public report.
+      </div>
+    </div>
+    <div class="close">X</div>
+  </div>
+  <br>
+  <p class="in-page-title">Previous Rulings</p>
+  <br>
+  <div class="row">
+    <ng-container *ngFor="let trial of pageInfo?.previousTrials">
+      <div class="col-lg-6">
+        <test-survey-box [model]="trial"></test-survey-box>
+      </div>
+    </ng-container>
+  </div>
+</div>

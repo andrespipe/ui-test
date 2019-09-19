@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UiControlsModule } from './modules/ui-controls/ui-controls.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UiControlsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

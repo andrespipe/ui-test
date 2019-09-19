@@ -1,0 +1,22 @@
+@import 'stylesVariables';
+
+.percent-bar{
+  display: flex;
+
+  .like, .dislike{
+    height: 35px;
+    color: white;
+    padding: 0 10px;
+    font-size: 25px;
+  }
+
+  .like{
+    background-color: $color-agree;
+    text-align: left;
+  }
+
+  .dislike{
+    background-color: $color-disagree;
+    text-align: right;
+  }
+}

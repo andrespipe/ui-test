@@ -1,0 +1,24 @@
+@import 'stylesVariables';
+
+.buttons-container{
+  display: flex;
+
+  .agree-btn, .disagree-btn{
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    height: 80px;
+    color: white;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .agree-btn{
+    background-color: $color-agree;
+  }
+
+  .disagree-btn{
+    background-color: $color-disagree;
+  }
+
+}

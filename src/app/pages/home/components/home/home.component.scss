@@ -1,0 +1,40 @@
+@import 'stylesVariables';
+
+.home-page-container{
+  padding-top: $page-padding-top;
+
+  .header-info{
+    min-height: 570px;
+  }
+
+  .grey-box{
+    background-color: rgba(235,235,235, 1.0);
+    padding: 20px;
+    display: flex;
+    color: rgba($color: #000000, $alpha: .8);
+    .text-content{
+      flex-grow: 1;
+      display: flex;
+      .title{
+        display: flex;
+        align-items: center;
+        h2{
+          white-space: nowrap;
+        }
+      }
+      .text{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-size: 12px;
+      }
+    }
+    .close{
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-weight: 100;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="survey-box">
+  <ng-container [ngSwitch]="model?.type">
+    <ng-container *ngSwitchCase="'GLASS'">
+      <ng-container *ngTemplateOutlet="glassBody"></ng-container>
+      <test-dis-like-buttons></test-dis-like-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'RESULTS'">
+        <ng-container *ngTemplateOutlet="resultsBody"></ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-template #glassBody>
+  <div class="glass-body">
+    {{ model?.preTitle }}
+    <h1>{{ model?.title }}</h1>
+    <br>
+    <p>{{ model?.text }}</p>
+    <br>
+    <p (click)="requireMoreInformation()">
+      <span>W</span> More information
+    </p>
+    <b>{{ model?.finalText }}</b>
+  </div>
+</ng-template>
+
+<ng-template #resultsBody>
+  <div class="results-body" [style.background-image]="formatImageUrl(model.imageUrl)">
+    <div class="results-body-wrapper">
+      <div class="results-body-content">
+        <h2>{{ model?.title }}</h2>
+        <p class="text-description">{{ model?.text }}</p>
+        <div class="full-report-space">
+          <div class="button-space">
+            <button class="btn btn-primary">View Full Report</button>
+          </div>
+          <div class="text-right time-text">
+            <div class="time">{{ model?.timeText }}</div>
+            <div class="category">in {{ model?.categoryDescription }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <test-percentage-bar [model]="model?.voteInfo"></test-percentage-bar>
+  </div>
+</ng-template>

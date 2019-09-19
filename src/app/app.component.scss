@@ -1,9 +1,6 @@
 @import 'stylesVariables';
 
 .layout{
-  min-width: 1280px;
-  padding: 0 120px 0 120px;
-
   .content{
     min-height: calc(100vh - #{$footer-height} - #{$nav-bar-height});
   }

@@ -3,3 +3,14 @@ html, body {
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+
+.btn.btn-primary{
+  background-color: unset !important;
+  border-color: white;
+  border-radius: 0;
+}
+
+.in-page-title{
+  font-size: 35px;
+  font-weight: 200;
+}
