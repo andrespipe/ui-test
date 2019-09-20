@@ -52,7 +52,7 @@ nav.nav-bar{
           }
         }
 
-        &:hover{
+        &:hover, &:focus{
           .btn-menu{
             visibility: visible;
           }

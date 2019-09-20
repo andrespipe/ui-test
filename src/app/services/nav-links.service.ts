@@ -7,6 +7,7 @@ import { SURVEY_CATEGORY } from '../modules/ui-controls/models/survey-box.model'
 const navLinksMock: INavElement[] = [
   {
     label: 'Past Trials',
+    route: ROUTES.previous,
     links: Object.getOwnPropertyNames(SURVEY_CATEGORY).map(category => {
       return {
         label: SURVEY_CATEGORY[category],

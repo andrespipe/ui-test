@@ -6,11 +6,11 @@
     <ul class="btn-list">
       <ng-container *ngFor="let button of buttons">
         <li class="text-center">
-          <ng-container *ngIf="button.route; else menu">
+          <ng-container *ngIf="!button.links; else menu">
             <a [routerLink]="button.route">{{ button.label }}</a>
           </ng-container>
           <ng-template #menu>
-            {{ button.label }}
+            <a [routerLink]="button.route">{{ button.label }}</a>
             <div class="btn-menu text-center">
               <div class="triangle-up"></div>
               <ul>
