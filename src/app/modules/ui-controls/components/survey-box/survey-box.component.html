@@ -12,7 +12,7 @@
 </div>
 
 <ng-template #glassBody>
-  <div class="glass-body">
+  <div class="glass-body glass-background">
     {{ model?.preTitle }}
     <h1>{{ model?.title }}</h1>
     <br>
@@ -26,15 +26,17 @@
 </ng-template>
 
 <ng-template #resultsBody>
-  <div class="results-body" [style.background-image]="formatImageUrl(model.imageUrl)">
-    <div class="results-body-wrapper">
+  <div class="results-body" [style.background-image]="formatImageUrl(model.imageUrl)" [style.min-height]="minHeight + 'px'">
+    <div class="results-body-wrapper" [style.min-height]="minHeight + 'px'">
       <div class="results-body-content">
         <test-dis-like-square [isLike]="model?.voteInfo?.isFavorable"></test-dis-like-square>
         <h2>{{ model?.title }}</h2>
         <p class="text-description">{{ model?.text }}</p>
         <div class="full-report-space">
           <div class="button-space">
-            <button class="btn btn-primary">View Full Report</button>
+            <button class="btn btn-primary" (click)="requireMoreInformation()">
+              View Full Report
+            </button>
           </div>
           <div class="text-right time-text">
             <div class="time">{{ model?.timeText }}</div>

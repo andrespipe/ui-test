@@ -1,0 +1,102 @@
+<br>
+<br>
+<div class="header-content">
+  <div class="row">
+    <div class="header-card col-lg-6">
+      <div class="header-card-text glass-background">
+        <p class="header-card-text-title">What do People Think About</p>
+        <h1>{{ trial.title }}?</h1>
+        <p class="header-card-text-intro">A reported created by RULE OF THUMB with opinions submitted by users between {{ formatedStartDate }} ans {{ formatedEndDate }}</p>
+      </div>
+      <div class="conclusion-space" [ngClass]="trial?.voteInfo?.isFavorable ? 'like-bkg' : 'dislike-bkg'">
+        <div class="icon-space">
+          <i class="fas" [ngClass]="trial?.voteInfo?.isFavorable ? 'fa-thumbs-up' : 'fa-thumbs-down'"></i>
+        </div>
+        <div class="text-space">
+          {{ trial.conclusionText }}
+        </div>
+        <div class="share-space">
+          <div>
+            <b>Share</b><br>
+            <span class="text-nowrap">this report</span>
+          </div>
+          <i class="far fa-share-square"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <test-percentage-bar
+    [model]="trial.voteInfo"
+    [height]="70">
+  </test-percentage-bar>
+</div>
+<br>
+<br>
+<div class="page-content">
+  <div class="summary-text" [innerHTML]="trial.summaryText"></div>
+  <br>
+  <br>
+  <div class="row comments-more">
+    <ng-container *ngFor="let comment of trial.comments">
+      <div class="col-md-6">
+        <div class="grey-box">
+          <div class="title">
+            <h3 [ngClass]="{
+              'agree': comment?.isFavorable === true,
+              'disagree': comment?.isFavorable === false,
+              'none': comment?.isFavorable === undefined}">
+              {{ comment.title }}
+            </h3>
+            <ng-container *ngIf="comment?.isFavorable !== undefined; else none">
+              <i class="fas" [ngClass]="comment?.isFavorable ? 'fa-thumbs-up' : 'fa-thumbs-down'"></i>
+            </ng-container>
+            <ng-template #none>
+              <i class="fas fa-recycle"></i>
+            </ng-template>
+          </div>
+          <div class="content">
+            <br>
+            <p>
+              {{ comment.text }}
+            </p>
+            <br>
+            <p>
+              by <i><b>{{ comment.reporterName }}</b></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let percentDetail of trial.percentDetails">
+      <div class="col-md-6">
+        <div class="percent-box">
+          <div class="colors-wrapper" [style.background-image]="'url(\'' + trial.headerImage  + '\')'">
+            <ng-container *ngIf="percentDetail.isFavorable; else unfavorable">
+              <div class="disagree glass-background" [style.height]="percentDetail?.voteInfo.dislike + '%'"></div>
+              <div class="agree glass-background" [style.height]="percentDetail?.voteInfo.like + '%'"></div>
+            </ng-container>
+            <ng-template #unfavorable>
+              <div class="disagree glass-background" [style.height]="percentDetail?.voteInfo.like + '%'"></div>
+              <div class="agree glass-background" [style.height]="percentDetail?.voteInfo.dislike + '%'"></div>
+            </ng-template>
+          </div>
+          <div class="percents">
+            <div class="text">
+              <div class="points text-center">
+                <span>{{ percentDetail.isFavorable ? percentDetail.voteInfo.like : percentDetail.voteInfo.dislike }} %</span>
+                <br>
+                <i class="fas" [ngClass]="percentDetail?.isFavorable ? 'fa-thumbs-up' : 'fa-thumbs-down'"></i>
+              </div>
+              <div class="title in-page-title text-center">{{ percentDetail.title }}</div>
+              <br>
+              <div class="summary">{{ percentDetail.text }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<br>
+<br>

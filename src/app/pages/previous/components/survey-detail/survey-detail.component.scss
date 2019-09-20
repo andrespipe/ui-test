@@ -1,0 +1,163 @@
+@import 'stylesVariables';
+
+.header-content{
+  min-height: 592px;
+  height: 592px;
+  display: flex;
+  flex-direction: column;
+
+  .spacer{
+    flex-grow: 1;
+  }
+}
+
+.header-card{
+  color: white;
+  .header-card-text{
+    padding: 25px;
+    background-color: rgba($color: #000000, $alpha: .5);
+
+    .header-card-text-title{
+      font-weight: 200;
+      font-size: 25px;
+      margin: 0;
+      opacity: .5;
+    }
+
+    h1{
+      font-weight: 300;
+    }
+
+    .header-card-text-intro{
+      margin: 0;
+      font-weight: 200;
+      font-size: 12px;
+      opacity: .5;
+    }
+  }
+
+  .conclusion-space{
+    display: flex;
+    min-height: 100px;
+
+    .icon-space{
+      text-align: center;
+      display: flex;
+      align-items: center;
+      font-size: 35px;
+      padding: 20px;
+    }
+  
+    .text-space{
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+      font-weight: 300;
+      text-align: center;
+      padding: 0 50px;
+    }
+
+    .share-space{
+      display: flex;
+      align-items: flex-end;
+      padding: 0 3px 3px 20px;
+      font-size: 8px;
+      i{
+        font-size: 20px;
+        margin-left: 3px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+}
+
+.page-content{
+
+  .summary-text{
+    background-color: rgb(235, 235, 235);
+    padding: 35px;
+    font-size: 20px;
+    font-weight: 200;
+    color: grey;
+  }
+
+  .grey-box{
+    margin-bottom: 15px;
+    background-color: rgb(235, 235, 235);
+    color: white;
+    padding: 15px;
+    font-weight: 200;
+
+    .title{
+      display: flex;
+      align-items: center;
+      border-bottom: #aaa dotted 2px; 
+      h3{
+        flex-grow: 1;
+
+        &.agree{
+          color: $color-agree;
+        }
+
+        &.disagree{
+          color: $color-disagree;
+        }
+
+        &.none{
+          color: rgb(216, 165, 212);
+        }
+      }
+      i{
+        font-size: 25px;
+      }
+    }
+
+    .content{
+      color: grey;
+    }
+  }
+
+  .percent-box{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    .colors-wrapper{
+      z-index: -2;
+      width: calc( 100% - 30px );
+      height: calc(100% - 15px );
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .agree{
+        background-color: $color-agree;
+        width: 100%;
+        opacity: .7;
+      }
+  
+      .disagree{
+        background-color: $color-disagree;
+        width: 100%;
+        opacity: .7;
+      }
+    }
+
+    .text{
+      color: white;
+      padding: 15px;
+      .points{
+        font-size: 30px;
+        font-weight: 200;
+      }
+      .summary{
+        font-weight: 100;
+        opacity: .8;
+      }
+    }
+  }
+}

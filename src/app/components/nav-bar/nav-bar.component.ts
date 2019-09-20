@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INavLink } from 'src/app/models/nav-link.model';
+import { INavLink, INavElement } from 'src/app/models/nav-link.model';
 import { NavLinksService } from 'src/app/services/nav-links.service';
 
 @Component({
@@ -9,14 +9,14 @@ import { NavLinksService } from 'src/app/services/nav-links.service';
 })
 export class NavBarComponent {
 
-  buttons: INavLink[];
+  buttons: INavElement[];
 
   constructor(private navLinksService: NavLinksService) {
     this.navLinksService.getNavBarLinks().subscribe(links => this.handleLinks(links));
   }
 
-  private handleLinks(links: INavLink[]) {
-    this.buttons = [...links];
+  private handleLinks(links: INavElement[]) {
+    this.buttons = links;
   }
 
 }

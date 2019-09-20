@@ -1,3 +1,5 @@
+@import 'stylesVariables';
+
 html, body {
   margin: 0;
   padding: 0;
@@ -29,4 +31,28 @@ html, body {
 .in-page-title{
   font-size: 35px;
   font-weight: 200;
+}
+
+.glass-background{
+  -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+}
+
+.capital-letter{
+  text-transform: lowercase;
+  &::first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.text-nowrap{
+  white-space: nowrap;
+}
+
+.like-bkg{
+  background-color: $color-agree;
+}
+
+.dislike-bkg{
+  background-color: $color-disagree;
 }

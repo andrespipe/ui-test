@@ -1,6 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
-import { SURVEY_BOX_TYPES, ISurveyBox } from '../../models/survey-box.model';
-import { BehaviorSubject } from 'rxjs';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ISurveyBox } from '../../models/survey-box.model';
 
 @Component({
   selector: 'test-survey-box',
@@ -9,12 +8,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SurveyBoxComponent {
 
-  @Input() model: ISurveyBox = { type: SURVEY_BOX_TYPES.GLASS };
+  @Input() model: ISurveyBox;
+  @Input() minHeight = 550;
 
-  @Output() requireInformation = new BehaviorSubject<ISurveyBox>(this.model);
+  @Output() requireInformation = new EventEmitter<ISurveyBox>();
 
   requireMoreInformation() {
-    this.requireInformation.next(this.model);
+    this.requireInformation.emit(this.model);
   }
 
   formatImageUrl(url: string) {

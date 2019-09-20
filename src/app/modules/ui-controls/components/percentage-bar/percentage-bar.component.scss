@@ -2,12 +2,21 @@
 
 .percent-bar{
   display: flex;
+  position: relative;
+  align-items: center;
 
-  .like, .dislike{
-    height: 35px;
+  .text-percent{
+    position: absolute;
     color: white;
-    padding: 0 10px;
-    font-size: 25px;
+    font-weight: 200;
+
+    &.left{
+      left: 10px;
+    }
+
+    &.right{
+      right: 10px;
+    }
   }
 
   .like{

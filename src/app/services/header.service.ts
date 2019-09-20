@@ -9,6 +9,6 @@ export class HeaderService {
   headerImage = new BehaviorSubject<string>(undefined);
 
   setHeaderImage(url: string) {
-    this.headerImage.next(`url(${url})`);
+    this.headerImage.next(url ? `url(${url})` : undefined);
   }
 }

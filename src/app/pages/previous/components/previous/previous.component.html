@@ -1,0 +1,19 @@
+<br>
+<br>
+<h2 class="in-page-title">Past Trials</h2>
+<br>
+<br>
+<div class="trials-list row">
+  <ng-container *ngFor="let trial of trialsList">
+    <div class="col-md-4">
+      <test-survey-box
+        [model]="trial"
+        [minHeight]="350"
+        (requireInformation)="handleTrialRequirement($event)">
+      </test-survey-box>
+    </div>
+  </ng-container>
+</div>
+<br>
+<test-submit-name></test-submit-name>
+<br>

@@ -1,0 +1,46 @@
+<div class="header-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="glass-background header-card">
+        <p>How It Works</p>
+        <div class="text-center slogan">
+          <div>Speak out. Be heard.</div>
+          <div>Be counted</div>
+        </div>
+        <br>
+        <p>
+          Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely.
+          <br>
+          It’s easy: You share your opinion, we analyse andput the data in a public report.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <ng-container *ngFor="let step of steps">
+    <div class="col-md-4 text-center">
+      <div class="step-element">
+        <img src="{{ step.image }}" alt="" srcset="">
+        <br>
+        <br>
+        <span class="in-page-title">{{ step.title }}</span>
+        <br>
+        <br>
+        <p>{{ step.text }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div class="additional-options text-center">
+  <span class="in-page-title">What do you want to do now?</span>
+  <br>
+  <br>
+  <a [routerLink]="'/Account'" class="btn btn-secondary">Sign Up Now</a>
+  &nbsp;
+  <a [routerLink]="'/Past-Trials'" class="btn btn-secondary">See Past Trials</a>
+</div>

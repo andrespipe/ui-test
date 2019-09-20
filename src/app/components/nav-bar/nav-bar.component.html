@@ -1,14 +1,25 @@
 <nav class="nav-bar">
   <div class="logo-space">
-    <a [routerLink]="'Home'" class="logo">
-      Rule of Thumb.
-    </a>
+    <a [routerLink]="'Home'" class="logo">Rule of Thumb.</a>
   </div>
   <div class="buttons-space">
     <ul class="btn-list">
       <ng-container *ngFor="let button of buttons">
-        <li>
-          <a [routerLink]="button.route">{{ button.label }}</a>
+        <li class="text-center">
+          <ng-container *ngIf="button.route; else menu">
+            <a [routerLink]="button.route">{{ button.label }}</a>
+          </ng-container>
+          <ng-template #menu>
+            {{ button.label }}
+            <div class="btn-menu text-center">
+              <div class="triangle-up"></div>
+              <ul>
+                <li *ngFor="let link of button.links" class="text-center capital-letter">
+                  <a [routerLink]="link.route + '/' + link.params">{{ link.label }}</a>
+                </li>
+              </ul>
+            </div>
+          </ng-template>
         </li>
       </ng-container>
       <li class="search text-right">

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavLinksService } from 'src/app/services/nav-links.service';
-import { INavLink } from 'src/app/models/nav-link.model';
+import { INavLink, INavElement } from 'src/app/models/nav-link.model';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -10,8 +10,8 @@ import { forkJoin } from 'rxjs';
 })
 export class FooterComponent {
 
-  links: INavLink[];
-  networks: INavLink[];
+  links: INavElement[];
+  networks: INavElement[];
 
   constructor(private navLinksService: NavLinksService) {
     forkJoin(

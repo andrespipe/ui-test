@@ -1,0 +1,14 @@
+<br>
+<br>
+<h1 class="in-page-title">Past Trials</h1>
+<br>
+<div class="row">
+  <ng-container *ngFor="let option of options">
+    <div class="col-3 text-center">
+      <a [routerLink]="option.params" class="btn btn-secondary">
+        {{ option.label }}
+      </a>
+      <hr>
+    </div>
+  </ng-container>
+</div>

@@ -1,10 +1,19 @@
 <div class="percent-bar">
-  <div class="like" [style.width]="model?.like + '%'">
-      <i class="fas fa-thumbs-up"></i>
-      {{ model?.like }}%
+  <div class="like"
+    [style.width]="model?.like + '%'"
+    [style.height]="height + 'px'">
   </div>
-  <div class="dislike" [style.width]="model?.dislike + '%'">
-      {{ model?.dislike }}%
-      <i class="fas fa-thumbs-down"></i>
+
+  <div class="dislike"
+    [style.min-width]="model?.dislike + '%'"
+    [style.height]="height + 'px'">
+  </div>
+  <div class="text-percent left" [style.font-size]="(height - 15) + 'px'">
+    <i class="fas fa-thumbs-up"></i>
+    {{ model?.like }}%
+  </div>
+  <div class="text-percent right" [style.font-size]="(height - 15) + 'px'">
+    {{ model?.dislike }}%
+    <i class="fas fa-thumbs-down"></i>
   </div>
 </div>

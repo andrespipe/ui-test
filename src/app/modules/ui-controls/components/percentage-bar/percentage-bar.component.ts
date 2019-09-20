@@ -9,6 +9,7 @@ import { IVoteModel } from '../../models/survey-box.model';
 export class PercentageBarComponent implements OnInit {
 
   @Input() model: IVoteModel;
+  @Input() height = 35;
 
   constructor() { }
 
