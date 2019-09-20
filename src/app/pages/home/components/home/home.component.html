@@ -27,7 +27,7 @@
   <div class="row">
     <ng-container *ngFor="let trial of pageInfo?.previousTrials">
       <div class="col-lg-6">
-        <test-survey-box [model]="trial"></test-survey-box>
+        <test-survey-box [model]="trial" (requireInformation)="handleInfoRequirement($event)"></test-survey-box>
       </div>
     </ng-container>
   </div>

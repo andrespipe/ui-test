@@ -100,3 +100,18 @@
 </div>
 <br>
 <br>
+<div class="past-trials">
+  <h2 class="in-page-title">Past Trials</h2>
+  <div class="row">
+    <ng-container *ngFor="let trial of trials">
+      <div class="col-md-4">
+        <test-survey-box [model]="trial" [minHeight]="350" (requireInformation)="handleRequireInformation($event)"></test-survey-box>
+      </div>
+    </ng-container>
+  </div>
+  <br>
+  <div class="text-center">
+    <a [routerLink]="'/Past-Trials'" class="btn btn-secondary">See All</a>
+  </div>
+  <br>
+</div>

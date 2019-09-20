@@ -12,3 +12,12 @@
     </div>
   </ng-container>
 </div>
+<br>
+<div class="row">
+  <ng-container *ngFor="let trial of trials">
+    <div class="col-lg-4">
+      <test-survey-box [model]="trial" (requireInformation)="handleRequireInformation($event)"></test-survey-box>
+    </div>
+  </ng-container>
+  
+</div>

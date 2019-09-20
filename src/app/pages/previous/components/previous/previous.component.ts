@@ -46,7 +46,7 @@ export class PreviousComponent implements OnInit {
   }
 
   handleTrialRequirement(trial: ISurveyBox) {
-    this.router.navigateByUrl(`${ROUTES.previous}/${trial.categoryID}/${trial.surveyID}/${trial.title.replace(/\s/g, '')}`);
+    this.trialsService.loadTrial(trial);
   }
 
 }

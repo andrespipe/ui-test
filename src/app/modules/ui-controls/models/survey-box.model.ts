@@ -121,6 +121,21 @@ export const TRIALS_LIST_MOCK: ISurveyBox[] = [
       like: 64,
     }
   },
+  {
+    surveyID: 6,
+    categoryID: SURVEY_CATEGORY.POLITICS,
+    categoryDescription: 'Politics',
+    imageUrl: '/assets/img/hilary-min.png',
+    title: 'Hilary Clinton',
+    text: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
+    timeText: '1 month ago',
+    type: SURVEY_BOX_TYPES.RESULTS,
+    voteInfo: {
+      dislike: 12,
+      isFavorable: true,
+      like: 88,
+    }
+  },
 ];
 
 const voteInfo: IVoteModel = {

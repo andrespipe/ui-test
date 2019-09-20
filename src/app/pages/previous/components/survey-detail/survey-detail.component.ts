@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { TrialsService } from 'src/app/services/trials.service';
 import { HeaderService } from 'src/app/services/header.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ITrialDetail } from 'src/app/modules/ui-controls/models/survey-box.model';
+import { ITrialDetail, ISurveyBox } from 'src/app/modules/ui-controls/models/survey-box.model';
 import * as moment from 'moment';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'test-survey-detail',
@@ -13,6 +14,8 @@ import * as moment from 'moment';
 export class SurveyDetailComponent implements OnInit {
 
   trial: ITrialDetail;
+
+  trials: ISurveyBox[];
 
   formatedStartDate: string;
   formatedEndDate: string;
@@ -34,6 +37,9 @@ export class SurveyDetailComponent implements OnInit {
 
   getRouteParams() {
     this.loadTrial(parseInt(this.route.snapshot.params.surveyId, undefined));
+    this.trialsService
+      .allTrials
+      .subscribe(trials => this.trials = trials.slice(0, 3));
   }
 
   loadTrial(id: number) {
@@ -51,6 +57,10 @@ export class SurveyDetailComponent implements OnInit {
 
   setHeaderImage(trial?: ITrialDetail) {
     this.headerService.setHeaderImage( trial ? trial.headerImage : undefined);
+  }
+
+  handleRequireInformation(trial: ISurveyBox) {
+    this.trialsService.loadTrial(trial);
   }
 
 }
